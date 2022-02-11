@@ -162,7 +162,7 @@ module.exports = class ShwarmaOrder extends Order {
           if (this.sDessert) {
             aReturn.push(this.sDessert);
           }
-          aReturn.push("Total  = " + Total + " CAD");
+          aReturn.push(`Total  = $${total}`);
           d = new Date();
           d.setMinutes(d.getMinutes() + 20);
           //  aReturn.push(`Please pick it up at ${d.toTimeString()}`);
@@ -184,7 +184,8 @@ module.exports = class ShwarmaOrder extends Order {
         d = new Date();
         d.setMinutes(d.getMinutes() + 20);
         aReturn.push(`Your order will be delivered at ${d.toTimeString()}`);
-        aReturn.push([Object.values(sInput.purchase_units[0].shipping.address)]);
+        aReturn.push();
+        aReturn.push("To the below Address \n "+[Object.values(sInput.purchase_units[0].shipping.address)]);
         break;
 
     }
