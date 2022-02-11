@@ -106,6 +106,9 @@ module.exports = class ShwarmaOrder extends Order {
 
       case OrderState.MoreItems:
 
+      if((sInput.toLowerCase() == "yes") || (sInput.toLowerCase() == "no"))
+      {
+
         if (sInput.toLowerCase() == "yes") {
           aReturn.push("What would you like to have ? \n Shawarma \n Burger \n Pizza");
           this.stateCur = OrderState.ITEM;
@@ -115,7 +118,11 @@ module.exports = class ShwarmaOrder extends Order {
           this.stateCur = OrderState.DESSERT;
           aReturn.push("Would you like to add Dessert ? (Yes or No) ");
         }
-
+      }
+      else 
+      {
+        aReturn.push(`${sInput} is not a valid entry , Please select Yes or No `);
+      }
         break;
 
       case OrderState.DESSERT:
