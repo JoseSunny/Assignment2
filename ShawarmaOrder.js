@@ -164,7 +164,7 @@ module.exports = class ShwarmaOrder extends Order {
           }
           aReturn.push(`Total  = $${total}`);
           d = new Date();
-          d.setMinutes(d.getMinutes() + 20);
+        //  d.setMinutes(d.getMinutes() + 20);
           //  aReturn.push(`Please pick it up at ${d.toTimeString()}`);
 
           this.stateCur = OrderState.PAYMENT;
